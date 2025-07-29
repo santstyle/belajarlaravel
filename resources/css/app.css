@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import "tailwindcss";
+=======
+@import 'tailwindcss';
+>>>>>>> 9271f4d125130300938e5d5ef50799400c9b47a3
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,7 +10,12 @@
 @source '../**/*.js';
 
 @theme {
+<<<<<<< HEAD
     --font-sans: "InterVariable, Instrument Sans", ui-sans-serif, system-ui,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
+=======
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+>>>>>>> 9271f4d125130300938e5d5ef50799400c9b47a3
 }
