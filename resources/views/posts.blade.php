@@ -5,6 +5,8 @@
         <div class="text-base text-gray-500">
             <a href="">SantStyle</a> | 1 Januari 2025
         </div>
+        \
+
         <p class="my-4 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet iure alias laborum
             sint, necessitatibus
             asperiores eligendi, hic totam sapiente voluptate assumenda. Odit deleniti voluptatem excepturi assumenda
