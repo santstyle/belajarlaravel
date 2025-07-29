@@ -1,9 +1,4 @@
 <?php
-it('returns a successful response', function () {
-    $response = $this->get('/');
-
-    $response->assertStatus(200);
-});
 
 namespace Tests\Feature;
 
@@ -22,4 +17,3 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 }
-
