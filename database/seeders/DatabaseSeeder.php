@@ -10,12 +10,11 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
+    /**S
      * Seed the application's database.
      */
     public function run(): void
     {
-        Post::factory(30)-> recycle([Category::factory(3) -> create(), User::factory(5) ->create()]) ->create();
-
+        $this->call([CategorySeeder::class, UserSeeder::class, PostSeeder::class]);
     }
 }
