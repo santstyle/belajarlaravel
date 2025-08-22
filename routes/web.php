@@ -12,9 +12,11 @@ Route::get('/', function () {
 
 // Route Blog Start
 Route::get('/posts', function () {
-    // $posts = Post::with(['author', 'category'])->latest()->get();
-    $posts = Post::where('author_id', 1)->get();
-    return view('posts', ['title' => 'Blog', 'posts' => $posts]);
+    $posts = Post::latest();
+    if (request('search')) {
+        $posts->where('title', 'like', '%' . request('search') . '%');
+    }
+    return view('posts', ['title' => 'Blog', 'posts' => $posts->get()]);
 });
 
 Route::get('posts/{post:slug}', function (Post $post) {
@@ -23,15 +25,10 @@ Route::get('posts/{post:slug}', function (Post $post) {
 });
 
 Route::get('/authors/{user:username}', function (User $user) {
-    // $posts = $user->posts->load('category','author');
-
     return view('posts', ['title' => count($user->posts) .  ' Article by. ' . $user->name, 'posts' => $user->posts]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-
-    // $posts = $category->posts->load('category', 'author');
-
     return view('posts', ['title' => 'Category: . ' . $category->name, 'posts' => $category->posts]);
 });
 
