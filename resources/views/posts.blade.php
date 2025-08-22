@@ -3,6 +3,9 @@
 
 
         <form class="mb-8 max-w-md mx-auto">
+            @if (request('category'))
+                <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
             <label for="default-search"
                 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div class="relative">
@@ -27,7 +30,7 @@
                 <article
                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex justify-between items-center mb-5 text-gray-500">
-                        <a href="/authors/{{ $post->category->slug }}">
+                        <a href="/posts?category={{ $post->category->slug }}">
                             <span
                                 class="{{ $post->category->color }} text-grey-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                                 {{ $post->category->name }}

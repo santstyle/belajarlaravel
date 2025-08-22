@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 // Route Blog Start
 Route::get('/posts', function () {
-    $posts = Post::latest()->filter(request(['search']))->get();
+    $posts = Post::latest()->filter(request(['search', 'category']))->get();
 
     return view('posts', ['title' => 'Blog', 'posts' => $posts]);
 });
