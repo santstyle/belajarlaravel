@@ -12,11 +12,9 @@ Route::get('/', function () {
 
 // Route Blog Start
 Route::get('/posts', function () {
-    $posts = Post::latest();
-    if (request('search')) {
-        $posts->where('title', 'like', '%' . request('search') . '%');
-    }
-    return view('posts', ['title' => 'Blog', 'posts' => $posts->get()]);
+    $posts = Post::latest()->filter(request(['search']))->get();
+
+    return view('posts', ['title' => 'Blog', 'posts' => $posts]);
 });
 
 Route::get('posts/{post:slug}', function (Post $post) {
