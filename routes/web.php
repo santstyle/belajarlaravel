@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 // Route Blog Start
 Route::get('/posts', function () {
-    $posts = Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6);
+    $posts = Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6)->withQueryString();
 
     return view('posts', ['title' => 'Blog', 'posts' => $posts]);
 });
